@@ -1,3 +1,11 @@
 <h1><%= @list.name %></h1>
 
+<h2>bookmarks</h2>
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li><%= bookmark.movie.title %>, <%= bookmark.comment %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a new Bookmark", new_list_bookmark_path(@list)%>
 <%= link_to "Back to all Lists", lists_path%>
